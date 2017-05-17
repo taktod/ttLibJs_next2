@@ -1,0 +1,34 @@
+export declare class VideoGL {
+    private canvas;
+    private gl;
+    private program;
+    private mvMatrix;
+    private vertex;
+    private vertexBuffer;
+    private uv;
+    private uvBuffer;
+    constructor(canvas: HTMLCanvasElement);
+    setupShaderFromSource(vertSrc: string, fragSrc: string, pjName: string, pjMatrix: Float32Array): void;
+    createTexture(textureId: number, id: WebGLTexture, data: any): WebGLTexture;
+    createArrayTexture(textureId: number, id: WebGLTexture, data: Uint8Array, format: number, width: number, height: number): WebGLTexture;
+    bindTexture(textureId: number, texture: WebGLTexture): void;
+    drawArrays(): void;
+    setVertex(vertex: Array<number>): void;
+    setUv(uv: Array<number>): void;
+    flush(): void;
+    uniform1i(location: WebGLUniformLocation, val: number): void;
+    uniform1f(location: WebGLUniformLocation, val: number): void;
+    setMvMatrix(mvMatrix: Float32Array): void;
+    useProgram(): void;
+    updateVertexUv(posName: string, uvName: string): void;
+    viewport(): void;
+    updateMvMatrix(mvName: string): void;
+    clear(): void;
+    getUniformLocation(name: string): WebGLUniformLocation;
+    refProgram(): WebGLProgram;
+    refGl(): WebGLRenderingContext;
+    private _createShaderFromSource(type, src);
+    private _createProgram(vs, fs);
+    static createMat4Ortho(left: number, right: number, bottom: number, top: number, near: number, far: number): Float32Array;
+    static createMat4Identity(): Float32Array;
+}
