@@ -18,5 +18,8 @@
     "gulp-typescript": "^3.1.6",
     "typescript": "^2.2.2",
     "webpack": "^2.4.1"
+  },
+  "dependencies": {
+    "pitch-shift": "0.0.0"
   }
 }
