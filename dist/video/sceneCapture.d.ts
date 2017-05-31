@@ -8,10 +8,11 @@ export declare class SceneCapture {
     private videoTexture;
     /**
      * コンストラクタ
-     * @param width  横サイズ
-     * @param height 縦サイズ
+     * @param width        横サイズ
+     * @param height       縦サイズ
+     * @param isSemiPlanar trueならsemiplanarとしてbinaryを取得する
      */
-    constructor(width: number, height: number);
+    constructor(width: number, height: number, isSemiPlanar?: boolean);
     /**
      * 描画データを取り出す。
      * @param source 映像ソース canvasかvideoタグ
